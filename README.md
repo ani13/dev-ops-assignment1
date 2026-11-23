@@ -22,6 +22,10 @@
    ![int-connection.png](screenshots/int-connection.png)
 
 4. Exit the container
+   * To exit the container we need a simple exit command
+   > exit
+   ![exit.png](screenshots/exit.png)
+
 5. Show a list of all the containers, stop and delete one of them
 
 ნაწილი 2: საკუთარი Python აპლიკაციის იმიჯის შექმნა (Build)
