@@ -35,17 +35,19 @@
    > docker rm ubuntu
    ![stop-container.png](screenshots/stop-container.png)
    As we can see after stopping and than removing the container we no longer see it in the list of containers
-6. 
-ნაწილი 2: საკუთარი Python აპლიკაციის იმიჯის შექმნა (Build)
-1. შექმენით სამუშაო საქაღალდე (Folder) თქვენი პროექტისთვის.
-2. შექმენით მარტივი Python სკრიპტი.
-3. შექმენით Dockerfile.
-4. ააწყვეთ (Build) Docker იმიჯი.
-5. გაუშვით კონტეინერი შექმნილი იმიჯიდან.
-6. მიანიჭეთ იმიჯს თეგი (Tag) და გამოიტანეთ ყველა იმიჯის სია.
 
-ნაწილი 3: Docker Volume-ების გამოყენება მონაცემების შესანახად
-1. შექმენით სახელდებული (Named) Docker Volume.
-2. გაუშვით კონტეინერი მიბმული (Mounted) Volume-ით.
-3. კონტეინერის შიგნით შექმენით და შეინახეთ რაიმე ფაილი.
-4. გაუშვით სხვა კონტეინერი იმავე Volume-ის გამოყენებით და დაადასტურეთ, რომ ფაილი შენახულია.
+## Part 2 - creating our own python application image
+
+1. Create a folder for your project
+2. Create a simple python script
+3. Create a Dockerfile
+4. Build your docker image from new dockerfile
+5. Run this container
+6. Assign a tag to this image and display all image list
+
+## Part 3 - using docker volumes for saving data
+
+1. Create a named docker volume
+2. Run container with mounted volume
+3. Create and save a file inside a container
+4. Run another container with the same volume and check the file
