@@ -27,7 +27,15 @@
    ![exit.png](screenshots/exit.png)
 
 5. Show a list of all the containers, stop and delete one of them
-
+   * For showing a list of all containers docker has this command, with -a flag we will also show the stopped containers not just the running ones
+   > docker ps -a
+   ![containers.png](screenshots/containers.png)
+   * To stop and than delete a container we run
+   > docker stop ubuntu
+   > docker rm ubuntu
+   ![stop-container.png](screenshots/stop-container.png)
+   As we can see after stopping and than removing the container we no longer see it in the list of containers
+6. 
 ნაწილი 2: საკუთარი Python აპლიკაციის იმიჯის შექმნა (Build)
 1. შექმენით სამუშაო საქაღალდე (Folder) თქვენი პროექტისთვის.
 2. შექმენით მარტივი Python სკრიპტი.
