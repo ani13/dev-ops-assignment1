@@ -8,16 +8,14 @@
    * Docker run will create and run the "hello-world" image container, which will be pulled from docker hub, The output shows us the hello world output and confirms that docker is working properly, we also see the step-by-step explanation of what docker is doing under the hood
 
 2. Run interactive ubuntu container
-   * 
+   * The command we need to execute, we can say which version of ubuntu image we want, now I will not specify and just say latest, overall better to specify if your environment expects a certain version of an official image
+   > docker run -it --name ubuntu-version ubuntu:latest bash
+   ![ubuntu-interactive.png](screenshots/ubuntu-interactive.png)
+   * As we can see docker pulled the specified image, as it was not found  and ran the container in interactive mode with a terminal
 
-
-ნაწილი 1: კონტეინერების გაშვება და შესწავლა
-1. გაუშვით Hello World კონტეინერი და დააკვირდით მიღებულ შედეგს.
-2. გაუშვით ინტერაქტიული Ubuntu კონტეინერი.
-3. კონტეინერის შიგნით დააინსტალირეთ curl და შეამოწმეთ ინტერნეტთან წვდომა.
-4. გამოდით კონტეინერიდან.
-5. გამოიტანეთ ყველა კონტეინერის სია, გააჩერეთ და წაშალეთ ერთ-ერთი მათგანი (არასავალდებულო).
-
+3. Install curl inside the container and check internet connection
+4. Exit the container
+5. Show a list of all the containers, stop and delete one of them
 
 ნაწილი 2: საკუთარი Python აპლიკაციის იმიჯის შექმნა (Build)
 1. შექმენით სამუშაო საქაღალდე (Folder) თქვენი პროექტისთვის.
