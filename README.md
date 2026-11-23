@@ -14,6 +14,13 @@
    * As we can see docker pulled the specified image, as it was not found  and ran the container in interactive mode with a terminal
 
 3. Install curl inside the container and check internet connection
+   * We are inside the ubuntu container and we will execute these commands to update the package list, install curl and check connection:
+   * > apt update
+     > apt install -y curl
+     > curl -I https://github.com
+   ![curl.png](screenshots/curl.png)
+   ![int-connection.png](screenshots/int-connection.png)
+
 4. Exit the container
 5. Show a list of all the containers, stop and delete one of them
 
