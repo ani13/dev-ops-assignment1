@@ -39,12 +39,31 @@
 ## Part 2 - creating our own python application image
 
 1. Create a folder for your project
+   * To create a new folder named "app" we run this command
+   > mkdir -p ~/dev-ops-assignment1/app
+   ![mkdir.png](screenshots/mkdir.png)
 2. Create a simple python script
+   * We create main/py inside app either manually or with command:
+   > nano main.py
+   * I created fibonacci function in main.py and called it for 10 and this is the output:
+   ![fibonacci.png](screenshots/fibonacci.png)
 3. Create a Dockerfile
+   * We create a DockerFile, manually or with nano DockerFile
+   * Now we write the content, we configure which base image we use for python, we set a working directory inside a container and copy main.py and state commands for start up, for now that would be sufficient, because our app is not complicated
 4. Build your docker image from new dockerfile
+   * Now in the same directory where our DockerFile is we execute this command to build the image
+   > docker build -t fibonacci-app .
+   ![build.png](screenshots/build.png)
 5. Run this container
+   To run this container we just tell Docker which image to run
+   > docker run --name fibonacci-container fibonacci-app
+   ![run.png](screenshots/run.png)
+   and we see a successful results
 6. Assign a tag to this image and display all image list
-
+   * Now we tag our image, we can tag it with the verion and we execute this command and than docker images to see the images and we see out new tagged image:
+   > docker tag fibonacci-app fibonacci-app:v1
+   > docker images
+   ![tag.png](screenshots/tag.png)
 ## Part 3 - using docker volumes for saving data
 
 1. Create a named docker volume
