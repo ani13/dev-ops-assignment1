@@ -48,10 +48,10 @@
    * I created fibonacci function in main.py and called it for 10 and this is the output:
    ![fibonacci.png](screenshots/fibonacci.png)
 3. Create a Dockerfile
-   * We create a DockerFile, manually or with nano DockerFile
+   * We create a Dockerfile, manually or with nano Dockerfile
    * Now we write the content, we configure which base image we use for python, we set a working directory inside a container and copy main.py and state commands for start up, for now that would be sufficient, because our app is not complicated
 4. Build your docker image from new dockerfile
-   * Now in the same directory where our DockerFile is we execute this command to build the image
+   * Now in the same directory where our Dockerfile is we execute this command to build the image
    > docker build -t fibonacci-app .
    ![build.png](screenshots/build.png)
 5. Run this container
@@ -60,13 +60,28 @@
    ![run.png](screenshots/run.png)
    and we see a successful results
 6. Assign a tag to this image and display all image list
-   * Now we tag our image, we can tag it with the verion and we execute this command and than docker images to see the images and we see out new tagged image:
+   * Now we tag our image, we can tag it with the verion and we execute this command and than docker images to display all locally available images and we see out new tagged image:
    > docker tag fibonacci-app fibonacci-app:v1
    > docker images
    ![tag.png](screenshots/tag.png)
 ## Part 3 - using docker volumes for saving data
 
 1. Create a named docker volume
+   * We move to volumes and to create a named volume we neeed to use this docker command and choose a name "fibonacci-volume" and to check ti actully exists we run second command
+   > docker volume create fibonacci-volume
+   > docker volume ls
+   ![vol_creation.png](screenshots/vol_creation.png)
+   ![vol_display.png](screenshots/vol_display.png)
 2. Run container with mounted volume
+   To run this container with mounted volume we need the following docker command:
+    > docker run -it --name fibonacci-container-1 -v fibonacci-volume:/data alpine sh
+    ![run-container-mounted-vol.png](screenshots/run-container-mounted-vol.png)
+  * Let's test it exists with : cat /data/fibonacci.txt
 3. Create and save a file inside a container
+   Now that the container is running we execute a file creation with echo inside the container:
+   > echo "Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34" > /data/fibonacci.txt
+   ![create-file.png](screenshots/create-file.png)
 4. Run another container with the same volume and check the file
+   Now we run another container but same alpine image and same volume and we verify the file, we don't need the interactive mode anymore, so we run with rm to make sure the second container gets removed and than we check the fibonacci and the file should there since we use the same volume
+    > docker run --rm -v fibonacci-volume:/data alpine cat /data/fibonacci.txt
+   ![volume-file-check.png](screenshots/volume-file-check.png)
